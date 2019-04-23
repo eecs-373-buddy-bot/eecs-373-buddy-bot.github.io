@@ -218,6 +218,12 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                            <h3 class="section-subheading text-muted">- <a href="media/test_1.MOV">Raw Test Video 1</a>
+                        </h3>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -358,7 +364,9 @@ We used DF Robot's Wii Remote IR camera to retrieve positional data of the user 
                                     <p>The ultrasonic distance sensor was used for obstacle detection and avoidance. By
                                     communicating via PWM, the sensor returned the distance to any nearby object,
                                     allowing the robot to avoid and reverse away from oncoming objects, and stop when
-                                    within desired range of the target anklet.</p>
+                                    within desired range of the target anklet. In order to achieve this, an interrupt
+                                    was triggered everytime a measurement was added to a buffer. In software, a median
+                                    smoothing filter was then applied to make sure values returned were accurate.</p>
                                     <button class="btn btn-primary" data-dismiss="modal" type="button">
                                         <i class="fas fa-times"></i>
                                         Close</button>
